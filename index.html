@@ -1,0 +1,371 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coach Mike | Swimming & Water Safety</title>
+<meta name="description" content="Professional swimming lessons, elite athlete training, water safety, lifeguarding and adaptive para swimming with Coach Mike in Kenya.">
+<style>
+:root {
+  --gold: #d4af37;
+  --gold-light: #f5dc91;
+  --black: #080808;
+  --dark: #121212;
+  --grey: #b9b9b9;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--black);
+  color: #fff;
+  font-family: Arial, sans-serif;
+  line-height: 1.7;
+}
+a { color: inherit; text-decoration: none; }
+header {
+  position: sticky; top: 0; z-index: 10;
+  background: rgba(8,8,8,.96);
+  border-bottom: 1px solid rgba(212,175,55,.35);
+  padding: 16px 7%;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.logo {
+  font-family: Georgia, serif;
+  color: var(--gold);
+  font-size: 25px; font-weight: bold; letter-spacing: 3px;
+}
+nav { display: flex; gap: 23px; flex-wrap: wrap; }
+nav a { font-size: 13px; color: #eee; }
+nav a:hover { color: var(--gold); }
+.hero {
+  min-height: 650px;
+  display: flex; align-items: center;
+  padding: 90px 9%;
+  background:
+  linear-gradient(90deg,rgba(0,0,0,.96),rgba(0,0,0,.66),rgba(0,0,0,.35)),
+  url('https://images.unsplash.com/photo-1530549387789-4c1017266635?auto=format&fit=crop&w=1800&q=85') center/cover;
+}
+.hero-content { max-width: 720px; }
+.eyebrow {
+  color: var(--gold); letter-spacing: 4px;
+  font-size: 13px; text-transform: uppercase;
+}
+h1 {
+  font-family: Georgia, serif;
+  font-size: clamp(43px,7vw,78px);
+  line-height: 1.12; margin: 20px 0;
+}
+h1 span, h2 span { color: var(--gold); }
+.hero p { color: #ddd; max-width: 570px; font-size: 17px; }
+.btn {
+  display: inline-block; margin-top: 28px;
+  padding: 13px 25px; background: var(--gold);
+  color: #080808; font-weight: bold;
+  border: 1px solid var(--gold); border-radius: 3px;
+  transition: .2s;
+}
+.btn:hover { background: transparent; color: var(--gold); }
+.btn-outline {
+  background: transparent; color: var(--gold);
+  margin-left: 10px;
+}
+section { padding: 85px 8%; }
+.section-title { text-align: center; margin-bottom: 45px; }
+.section-title h2 {
+  font-family: Georgia,serif;
+  font-size: clamp(30px,4vw,45px);
+}
+.section-title p { color: var(--grey); margin-top: 10px; }
+.about {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 50px; align-items: center;
+}
+.about-image {
+  min-height: 400px; border: 1px solid var(--gold);
+  background: url('https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=1000&q=85') center/cover;
+}
+.about-text h2 { font: 40px Georgia,serif; margin-bottom: 20px; }
+.about-text p { color: #ccc; margin-bottom: 15px; }
+.gold-line { width: 75px; height: 3px; background: var(--gold); margin: 18px 0; }
+.services {
+  background: linear-gradient(180deg,#101010,#080808);
+}
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+  gap: 20px;
+}
+.service-card {
+  background: #151515; padding: 27px;
+  border: 1px solid #35302a;
+  transition: .25s;
+}
+.service-card:hover {
+  border-color: var(--gold); transform: translateY(-5px);
+}
+.service-card .number { color: var(--gold); font: 30px Georgia,serif; }
+.service-card h3 { font: 22px Georgia,serif; margin: 12px 0; }
+.service-card p { color: #bbb; font-size: 14px; }
+.price { color: var(--gold-light); font-weight: bold; margin-top: 15px; }
+.program-note { color: var(--grey); font-size: 12px; margin-top: 8px; }
+.quote-band {
+  text-align: center;
+  background: linear-gradient(rgba(0,0,0,.83),rgba(0,0,0,.88)),
+  url('https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1600&q=85') center/cover;
+  padding: 85px 10%;
+}
+.quote-band blockquote {
+  font: italic clamp(25px,4vw,39px) Georgia,serif;
+  color: var(--gold-light);
+}
+.quote-band p { margin-top: 18px; color: #ddd; }
+.quotes-grid {
+  display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  gap: 18px;
+}
+.quote-card {
+  padding: 25px; background: #141414;
+  border-left: 3px solid var(--gold);
+  color: #eee; font: italic 18px Georgia,serif;
+}
+.contact-wrap {
+  display: grid; grid-template-columns: .8fr 1.2fr;
+  gap: 40px; align-items: start;
+}
+.contact-info p { color: #ccc; margin: 15px 0; }
+.contact-info strong { color: var(--gold); }
+form {
+  background: #141414; padding: 30px;
+  border: 1px solid #39332a;
+}
+form h3 { font: 27px Georgia,serif; margin-bottom: 20px; }
+label { display: block; color: var(--gold-light); margin: 13px 0 5px; font-size: 13px; }
+input, select, textarea {
+  width: 100%; padding: 13px;
+  background: #090909; color: white;
+  border: 1px solid #454545; outline: none;
+  font: inherit; border-radius: 2px;
+}
+input:focus, select:focus, textarea:focus { border-color: var(--gold); }
+textarea { min-height: 110px; resize: vertical; }
+form button {
+  width: 100%; padding: 15px; margin-top: 20px;
+  background: var(--gold); border: none;
+  font-weight: bold; cursor: pointer;
+}
+form button:hover { background: var(--gold-light); }
+.whatsapp {
+  display: inline-block; margin-top: 15px;
+  color: var(--gold-light); text-decoration: underline;
+}
+footer {
+  text-align: center; padding: 30px 15px;
+  border-top: 1px solid #3a3020; color: #aaa;
+}
+footer strong { color: var(--gold); letter-spacing: 2px; }
+@media(max-width:750px) {
+  header { flex-direction: column; gap: 12px; }
+  nav { justify-content: center; gap: 13px; }
+  .hero { min-height: 570px; padding: 70px 7%; }
+  .about, .contact-wrap { grid-template-columns: 1fr; }
+  .about-image { min-height: 280px; }
+  section { padding: 65px 6%; }
+  .btn-outline { margin-left: 0; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <a class="logo" href="#home">COACH MIKE</a>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#quotes">Inspiration</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="eyebrow">Professional Swimming Coach</div>
+    <h1>BUILDING CONFIDENCE <span>IN EVERY STROKE.</span></h1>
+    <p>
+      Learn to swim, improve your technique and develop confidence in the water.
+      From beginners to competitive athletes, every swimmer has a journey.
+    </p>
+    <a class="btn" href="#contact">BOOK A SESSION</a>
+    <a class="btn btn-outline" href="#services">EXPLORE PROGRAMMES</a>
+  </div>
+</section>
+
+<section id="about">
+  <div class="about">
+    <div class="about-image" role="img" aria-label="Swimming pool"></div>
+    <div class="about-text">
+      <div class="eyebrow">Welcome to Coach Mike</div>
+      <h2>MORE THAN SWIMMING. <span>IT'S A LIFE SKILL.</span></h2>
+      <div class="gold-line"></div>
+      <p>
+        Coach Mike offers swimming instruction and aquatic training designed
+        to help people of different abilities and experience levels.
+      </p>
+      <p>
+        Whether you are learning your first stroke, preparing for competition,
+        improving water safety or exploring adaptive swimming, there is a
+        programme to support your goals.
+      </p>
+      <a class="btn" href="#contact">GET STARTED</a>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="section-title">
+    <div class="eyebrow">What We Offer</div>
+    <h2>OUR <span>SWIMMING PROGRAMMES</span></h2>
+    <p>Professional guidance. Personal progress. Greater confidence.</p>
+  </div>
+
+  <div class="service-grid">
+    <div class="service-card">
+      <div class="number">01</div>
+      <h3>Learn to Swim</h3>
+      <p>Swimming lessons for beginners who want to develop water confidence and swimming skills.</p>
+      <div class="price">KES 10,000</div>
+      <div class="program-note">12 sessions</div>
+    </div>
+
+    <div class="service-card">
+      <div class="number">02</div>
+      <h3>Elite / Athlete Training</h3>
+      <p>Structured training for swimmers looking to improve performance, technique and endurance.</p>
+      <div class="price">KES 6,000</div>
+      <div class="program-note">Per month</div>
+    </div>
+
+    <div class="service-card">
+      <div class="number">03</div>
+      <h3>Para Swimming</h3>
+      <p>An adaptive swimming programme for swimmers with disabilities, supporting participation and skill development.</p>
+      <div class="price">KES 12,000</div>
+      <div class="program-note">Programme fee — confirm duration when booking</div>
+    </div>
+
+    <div class="service-card">
+      <div class="number">04</div>
+      <h3>Water Safety</h3>
+      <p>Learn essential water awareness, safety skills and safer practices around aquatic environments.</p>
+      <div class="price">KES 10,000</div>
+      <div class="program-note">12 sessions</div>
+    </div>
+
+    <div class="service-card">
+      <div class="number">05</div>
+      <h3>Lifeguarding</h3>
+      <p>Lifeguarding services and aquatic safety support for pools and relevant events.</p>
+      <div class="price">KES 1,500</div>
+      <div class="program-note">Per day</div>
+    </div>
+
+    <div class="service-card">
+      <div class="number">06</div>
+      <h3>Masters Swimmers Programme</h3>
+      <p>Swimming development and training for adult swimmers who want to stay active and improve.</p>
+      <div class="price">Contact for pricing</div>
+      <div class="program-note">Ask about programme availability</div>
+    </div>
+  </div>
+</section>
+
+<section class="quote-band">
+  <blockquote>“The water is your opportunity to discover what you are capable of.”</blockquote>
+  <p>Every stroke is progress. Every session is an achievement.</p>
+</section>
+
+<section id="quotes">
+  <div class="section-title">
+    <div class="eyebrow">A Little Motivation</div>
+    <h2>INSPIRED TO <span>KEEP SWIMMING</span></h2>
+    <p>Small steps in the water can lead to remarkable progress.</p>
+  </div>
+  <div class="quotes-grid">
+    <div class="quote-card">“You don't have to be fast. You just have to keep moving.”</div>
+    <div class="quote-card">“Confidence begins when you dare to enter the water.”</div>
+    <div class="quote-card">“Every champion was once a beginner.”</div>
+    <div class="quote-card">“Progress is made one stroke at a time.”</div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="section-title">
+    <div class="eyebrow">Let's Get Started</div>
+    <h2>MAKE YOUR <span>ENQUIRY</span></h2>
+    <p>Tell us what programme you are interested in and Coach Mike will get back to you.</p>
+  </div>
+
+  <div class="contact-wrap">
+    <div class="contact-info">
+      <h2 style="font:32px Georgia,serif;color:#d4af37;">CONTACT COACH MIKE</h2>
+      <div class="gold-line"></div>
+      <p><strong>Phone / WhatsApp</strong><br>0116 088 816</p>
+      <p><strong>Email</strong><br>michaelokoth@gmail.com</p>
+      <p><strong>Programmes</strong><br>Swimming • Athlete Training • Water Safety • Lifeguarding</p>
+      <a class="btn" href="https://wa.me/254116088816" target="_blank" rel="noopener">CHAT ON WHATSAPP</a>
+    </div>
+
+    <form action="https://formsubmit.co/michaelokoth@gmail.com" method="POST">
+      <h3>Swimming Programme Enquiry</h3>
+      <input type="hidden" name="_subject" value="New Coach Mike Swimming Enquiry">
+      <input type="hidden" name="_captcha" value="false">
+
+      <label for="name">Full Name</label>
+      <input id="name" type="text" name="Full Name" placeholder="Enter your name" required>
+
+      <label for="phone">Phone Number</label>
+      <input id="phone" type="tel" name="Phone Number" placeholder="Enter your phone number" required>
+
+      <label for="email">Email Address</label>
+      <input id="email" type="email" name="Email" placeholder="Enter your email" required>
+
+      <label for="programme">Programme of Interest</label>
+      <select id="programme" name="Programme" required>
+        <option value="">Select a programme</option>
+        <option>Learn to Swim</option>
+        <option>Elite / Athlete Training</option>
+        <option>Para Swimming (Adaptive Programme)</option>
+        <option>Water Safety</option>
+        <option>Lifeguarding</option>
+        <option>Masters Swimmers Programme</option>
+      </select>
+
+      <label for="experience">Swimming Experience</label>
+      <select id="experience" name="Swimming Experience">
+        <option value="">Select your experience</option>
+        <option>Complete beginner</option>
+        <option>Basic swimming skills</option>
+        <option>Intermediate swimmer</option>
+        <option>Advanced / competitive swimmer</option>
+        <option>Prefer to discuss</option>
+      </select>
+
+      <label for="message">Tell us more</label>
+      <textarea id="message" name="Message" placeholder="Your goals, preferred sessions, questions or other details..."></textarea>
+
+      <button type="submit">SEND ENQUIRY</button>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <strong>COACH MIKE</strong>
+  <p>Building Confidence in Every Stroke.</p>
+  <p>© 2026 Coach Mike. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
