@@ -4,9 +4,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Coach Mike | Swimming Coach</title>
+<title>Coach Mike | Swimming Coach & Aquatic Supervisor</title>
 <meta name="description" content="Swimming lessons, athlete training, water safety and lifeguarding with Coach Mike in Kenya.">
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -143,7 +145,7 @@ a {
 
 section {
   padding: 85px 8%;
-  scroll-margin-top: 85px;
+  scroll-margin-top: 100px;
 }
 
 .section-heading {
@@ -170,10 +172,6 @@ section {
   text-align: center;
   color: var(--muted);
   font-size: 18px;
-}
-
-.about-content strong {
-  color: var(--gold-light);
 }
 
 .services, .packages, .contact {
@@ -302,6 +300,13 @@ form {
   gap: 15px;
 }
 
+form label {
+  color: var(--gold);
+  font-size: 14px;
+  margin-bottom: -10px;
+  text-align: left;
+}
+
 input, select, textarea {
   width: 100%;
   padding: 14px;
@@ -311,6 +316,10 @@ input, select, textarea {
   color: white;
   font-family: inherit;
   font-size: 15px;
+}
+
+input[type="date"] {
+  color-scheme: dark;
 }
 
 textarea {
@@ -390,6 +399,7 @@ footer span {
 
 <header class="navbar">
   <a href="#home" class="logo">COACH MIKE</a>
+
   <nav class="nav-links">
     <a href="#about">About</a>
     <a href="#services">Services</a>
@@ -405,8 +415,14 @@ footer span {
 <section class="hero" id="home">
   <div class="hero-content">
     <div class="eyebrow">SWIMMING • SAFETY • EXCELLENCE</div>
-    <h1>Building Confidence in Every Stroke</h1>
-    <p>Expert swimming instruction, water safety, and personalised coaching for every age and ability.</p>
+
+    <h1>Every Stroke Begins with Confidence</h1>
+
+    <p>
+      Expert swimming instruction, water safety, and personalised coaching
+      for every age and ability.
+    </p>
+
     <a href="#packages" class="btn btn-gold">View Packages</a>
     <a href="#contact" class="btn btn-outline">Contact Mike</a>
   </div>
@@ -417,10 +433,20 @@ footer span {
     <span>Get to know Coach Mike</span>
     <h2>About Me</h2>
   </div>
+
   <div class="about-content">
-    <p>Swimming is more than a skill — it is confidence, discipline, safety, and freedom in the water. Coach Mike is committed to helping swimmers develop their abilities through personalised instruction and a supportive learning environment.</p>
+    <p>
+      Swimming is more than a skill — it is confidence, discipline,
+      safety, and freedom in the water. Coach Mike is committed to
+      helping swimmers develop their abilities through personalised
+      instruction and a supportive learning environment.
+    </p>
     <br>
-    <p>Whether you are taking your first swimming lesson, improving your performance, or developing water safety skills, every swimmer deserves guidance that supports their individual journey.</p>
+    <p>
+      Whether you are taking your first swimming lesson, improving your
+      performance, or developing water safety skills, every swimmer
+      deserves guidance that supports their individual journey.
+    </p>
   </div>
 </section>
 
@@ -431,30 +457,37 @@ footer span {
   </div>
 
   <div class="service-grid">
+
     <div class="service-card">
       <h3>Learn to Swim</h3>
       <p>Swimming lessons designed to help beginners build confidence and develop essential swimming skills.</p>
     </div>
+
     <div class="service-card">
       <h3>Elite / Athlete Training</h3>
       <p>Structured training to improve technique, endurance, speed, and performance.</p>
     </div>
+
     <div class="service-card">
       <h3>Para Swimming</h3>
       <p>Swimming instruction adapted to individual abilities, needs, and personal goals.</p>
     </div>
+
     <div class="service-card">
       <h3>Water Safety</h3>
       <p>Essential water awareness and safety skills for confident and responsible swimming.</p>
     </div>
+
     <div class="service-card">
       <h3>Lifeguarding</h3>
       <p>Lifeguarding services focused on supervision and safety around swimming facilities.</p>
     </div>
+
     <div class="service-card">
       <h3>Masters Swimmers Programme</h3>
       <p>Swimming sessions for adults who want to maintain fitness, improve technique, and enjoy the water.</p>
     </div>
+
   </div>
 </section>
 
@@ -463,15 +496,19 @@ footer span {
     <span>Words to swim by</span>
     <h2>Inspiration</h2>
   </div>
+
   <div class="quote-grid">
+
     <div class="quote-card">
       <p>“Every great swimmer begins with the courage to take the first stroke.”</p>
       <span>Coach Mike</span>
     </div>
+
     <div class="quote-card">
       <p>“Progress in the water is built one stroke, one lesson, and one achievement at a time.”</p>
       <span>Coach Mike</span>
     </div>
+
   </div>
 </section>
 
@@ -482,6 +519,7 @@ footer span {
   </div>
 
   <div class="package-grid">
+
     <div class="package-card">
       <h3>Learn to Swim</h3>
       <div class="price">KES 10,000</div>
@@ -523,6 +561,7 @@ footer span {
       <p>Ask about available sessions and programme options.</p>
       <a class="btn btn-outline" href="#contact" onclick="choosePackage('Masters Swimmers Programme')">Enquire Now</a>
     </div>
+
   </div>
 </section>
 
@@ -533,21 +572,25 @@ footer span {
   </div>
 
   <div class="experience-grid">
+
     <div class="experience-card">
       <div class="number">01</div>
       <h3>Personalised Learning</h3>
       <p>Sessions shaped around each swimmer's ability and goals.</p>
     </div>
+
     <div class="experience-card">
       <div class="number">02</div>
       <h3>Confidence in Water</h3>
       <p>Building comfort, confidence, and essential swimming skills.</p>
     </div>
+
     <div class="experience-card">
       <div class="number">03</div>
       <h3>Continuous Improvement</h3>
       <p>Encouraging consistency, discipline, and progress with every session.</p>
     </div>
+
   </div>
 </section>
 
@@ -558,9 +601,11 @@ footer span {
   </div>
 
   <div class="contact-wrapper">
+
     <div class="contact-info">
       <h3>Ready to make a splash?</h3>
       <p>Have a question or want to book a swimming session? Get in touch.</p>
+
       <p><strong>Phone:</strong> 0116 088 816</p>
       <p><strong>Email:</strong> michaelokoth@gmail.com</p>
       <p><strong>Location:</strong> Kenya</p>
@@ -571,27 +616,65 @@ footer span {
     </div>
 
     <form action="https://formsubmit.co/michaelokoth@gmail.com" method="POST">
+
       <input type="hidden" name="_subject" value="New Swimming Enquiry - Coach Mike">
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_template" value="table">
 
-      <input type="text" name="Name" placeholder="Your Name" required>
-      <input type="email" name="Email" placeholder="Your Email Address" required>
-      <input type="tel" name="Phone" placeholder="Your Phone Number">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="Full Name" placeholder="Your Full Name" required>
 
-      <select name="Programme" id="programme" required>
-        <option value="">Select a Programme</option>
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="Email Address" placeholder="Your Email Address" required>
+
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="Phone Number" placeholder="Your Phone Number" required>
+
+      <label for="service">Service Needed</label>
+      <select name="Service Needed" id="service" required>
+        <option value="">Select Service Needed</option>
         <option>Learn to Swim</option>
         <option>Elite / Athlete Training</option>
         <option>Para Swimming</option>
         <option>Water Safety</option>
         <option>Lifeguarding</option>
         <option>Masters Swimmers Programme</option>
-        <option>Other Enquiry</option>
+        <option>Other</option>
       </select>
 
-      <textarea name="Message" placeholder="Tell Mike what you would like to know..." required></textarea>
+      <label for="learner">Learner Type</label>
+      <select name="Learner Type" id="learner" required>
+        <option value="">Select Learner Type</option>
+        <option>Child</option>
+        <option>Teenager</option>
+        <option>Adult</option>
+        <option>Senior</option>
+        <option>Person with a disability</option>
+        <option>Group</option>
+      </select>
+
+      <label for="date">Preferred Date</label>
+      <input type="date" name="Preferred Date" id="date" required>
+
+      <label for="location">Preferred Swimming Location</label>
+      <input
+        type="text"
+        name="Preferred Location"
+        id="location"
+        placeholder="Enter your area, pool or preferred location"
+        required
+      >
+
+      <label for="message">Additional Information</label>
+      <textarea
+        name="Additional Message"
+        id="message"
+        placeholder="Tell Mike about your swimming goals or any special requests..."
+        required
+      ></textarea>
+
       <button type="submit" class="btn btn-gold">Send Enquiry</button>
+
     </form>
   </div>
 </section>
@@ -607,7 +690,7 @@ footer span {
 document.getElementById("year").textContent = new Date().getFullYear();
 
 function choosePackage(packageName) {
-  document.getElementById("programme").value = packageName;
+  document.getElementById("service").value = packageName;
 }
 </script>
 
