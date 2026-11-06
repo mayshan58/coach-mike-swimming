@@ -2,748 +2,745 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#080808">
-  <title>Coach Mike | Swimming Coach & Aquatic Supervisor</title>
-  <meta name="description" content="Professional swimming lessons, athlete training, water safety and aquatic coaching with Coach Mike in Kenya.">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --gold: #d6a936;
-      --light-gold: #f5d77c;
-      --black: #080808;
-      --card: #141414;
-      --white: #f8f5ed;
-      --muted: #b9b5aa;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      background: var(--black);
-      color: var(--white);
-      font-family: 'DM Sans', sans-serif;
-      line-height: 1.7;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .container {
-      width: min(1120px, 90%);
-      margin: auto;
-    }
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(8, 8, 8, .96);
-      border-bottom: 1px solid rgba(214, 169, 54, .35);
-    }
-
-    nav {
-      min-height: 75px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .logo {
-      color: var(--gold);
-      font-family: 'Playfair Display', serif;
-      font-size: 25px;
-      font-weight: 700;
-      white-space: nowrap;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 25px;
-      align-items: center;
-      overflow-x: auto;
-      white-space: nowrap;
-      scrollbar-width: none;
-    }
-
-    .nav-links::-webkit-scrollbar {
-      display: none;
-    }
-
-    .nav-links a {
-      font-size: 13px;
-      color: var(--white);
-      transition: .3s;
-    }
-
-    .nav-links a:hover {
-      color: var(--gold);
-    }
-
-    .hero {
-      min-height: 600px;
-      display: flex;
-      align-items: center;
-      background:
-        linear-gradient(90deg, rgba(0,0,0,.92), rgba(0,0,0,.48)),
-        url('https://images.unsplash.com/photo-1530549387789-4c1017266635?auto=format&fit=crop&w=1800&q=85') center/cover;
-    }
-
-    .hero-content {
-      padding: 100px 0;
-      max-width: 720px;
-    }
-
-    .eyebrow {
-      color: var(--gold);
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      font-size: 12px;
-      margin-bottom: 20px;
-    }
-
-    h1, h2, h3 {
-      font-family: 'Playfair Display', serif;
-      line-height: 1.2;
-    }
-
-    h1 {
-      font-size: clamp(42px, 7vw, 76px);
-      margin-bottom: 22px;
-      overflow-wrap: break-word;
-    }
-
-    h1 span, .gold {
-      color: var(--gold);
-    }
-
-    .hero p {
-      color: #e4e0d8;
-      max-width: 600px;
-      font-size: 17px;
-      margin-bottom: 32px;
-    }
-
-    .btn {
-      display: inline-block;
-      background: var(--gold);
-      color: #080808;
-      padding: 13px 27px;
-      border-radius: 3px;
-      font-weight: 700;
-      transition: .3s;
-      border: 1px solid var(--gold);
-      cursor: pointer;
-    }
-
-    .btn:hover {
-      background: transparent;
-      color: var(--gold);
-    }
-
-    section {
-      padding: 85px 0;
-    }
-
-    .section-heading {
-      text-align: center;
-      margin-bottom: 45px;
-    }
-
-    .section-heading h2 {
-      font-size: clamp(30px, 5vw, 43px);
-      margin-bottom: 12px;
-    }
-
-    .section-heading p {
-      color: var(--muted);
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 45px;
-      align-items: center;
-    }
-
-    .about-image {
-      min-height: 390px;
-      border-radius: 8px;
-      background:
-        linear-gradient(0deg, rgba(0,0,0,.2), transparent),
-        url('https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=1000&q=85') center/cover;
-    }
-
-    .about-text h2 {
-      font-size: 38px;
-      margin-bottom: 20px;
-    }
-
-    .about-text p {
-      color: var(--muted);
-      margin-bottom: 17px;
-    }
-
-    .location {
-      color: var(--gold) !important;
-      margin-top: 20px;
-    }
-
-    .services {
-      background: #101010;
-    }
-
-    .service-grid, .package-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-    }
-
-    .service-card, .package-card {
-      background: var(--card);
-      border: 1px solid #29251b;
-      padding: 28px;
-      border-radius: 7px;
-      transition: .3s;
-    }
-
-    .service-card:hover, .package-card:hover {
-      transform: translateY(-5px);
-      border-color: var(--gold);
-    }
-
-    .service-number {
-      color: var(--gold);
-      font-family: 'Playfair Display', serif;
-      font-size: 28px;
-      margin-bottom: 12px;
-    }
-
-    .service-card h3, .package-card h3 {
-      font-size: 21px;
-      margin-bottom: 12px;
-    }
-
-    .service-card p, .package-card p {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .quotes {
-      background: #0d0d0d;
-    }
-
-    .quote-card {
-      max-width: 800px;
-      margin: auto;
-      text-align: center;
-      padding: 38px;
-      border-left: 3px solid var(--gold);
-      background: var(--card);
-    }
-
-    .quote-card p {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(22px, 4vw, 31px);
-      font-style: italic;
-    }
-
-    .quote-card span {
-      display: block;
-      color: var(--gold);
-      margin-top: 18px;
-      letter-spacing: 2px;
-      font-size: 12px;
-    }
-
-    .package-card {
-      display: flex;
-      flex-direction: column;
-      min-height: 245px;
-    }
-
-    .package-price {
-      color: var(--gold) !important;
-      font-size: 23px !important;
-      font-weight: 700;
-      margin: 12px 0;
-    }
-
-    .package-note {
-      margin-top: auto;
-      padding-top: 16px;
-      color: var(--light-gold) !important;
-      font-size: 13px !important;
-    }
-
-    .enquiry {
-      background: #101010;
-    }
-
-    .form-container {
-      max-width: 800px;
-      margin: auto;
-      padding: 35px;
-      background: var(--card);
-      border: 1px solid #332b1c;
-      border-radius: 8px;
-    }
-
-    .form-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
-
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      margin-bottom: 18px;
-    }
-
-    .form-group.full {
-      grid-column: 1 / -1;
-    }
-
-    label {
-      font-size: 13px;
-      color: var(--light-gold);
-    }
-
-    input, select, textarea {
-      width: 100%;
-      padding: 13px;
-      background: #090909;
-      border: 1px solid #39342a;
-      border-radius: 4px;
-      color: white;
-      font: inherit;
-      outline: none;
-    }
-
-    input:focus, select:focus, textarea:focus {
-      border-color: var(--gold);
-    }
-
-    textarea {
-      min-height: 120px;
-      resize: vertical;
-    }
-
-    .form-container button {
-      width: 100%;
-      font: inherit;
-      font-weight: 700;
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      text-align: center;
-    }
-
-    .contact-card {
-      background: var(--card);
-      padding: 28px 15px;
-      border-radius: 6px;
-      border: 1px solid #302819;
-    }
-
-    .contact-card h3 {
-      color: var(--gold);
-      margin-bottom: 10px;
-    }
-
-    .contact-card p {
-      color: var(--muted);
-      overflow-wrap: anywhere;
-    }
-
-    footer {
-      background: #050505;
-      border-top: 1px solid #40331a;
-      text-align: center;
-      padding: 30px 15px;
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    footer span {
-      color: var(--gold);
-    }
-
-    @media(max-width: 800px) {
-      nav {
-        align-items: center;
-        flex-direction: column;
-        padding: 12px 0;
-        gap: 8px;
-      }
-
-      .nav-links {
-        width: 100%;
-        padding-bottom: 7px;
-        justify-content: flex-start;
-        gap: 22px;
-      }
-
-      .hero {
-        min-height: 520px;
-      }
-
-      .about-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .about-image {
-        min-height: 280px;
-      }
-
-      .service-grid, .package-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media(max-width: 520px) {
-      section {
-        padding: 65px 0;
-      }
-
-      .service-grid, .package-grid, .form-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .form-group.full {
-        grid-column: auto;
-      }
-
-      .form-container {
-        padding: 22px 17px;
-      }
-
-      .hero-content {
-        padding: 75px 0;
-      }
-
-      .hero p {
-        font-size: 15px;
-      }
-
-      .about-text h2 {
-        font-size: 32px;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080808">
+<title>Coach Mike | Swimming Coach & Aquatic Supervisor</title>
+<meta name="description" content="Professional swimming lessons, athlete training, water safety and aquatic coaching with Coach Mike in Kenya.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --gold: #d6a936;
+  --light-gold: #f5d77c;
+  --black: #080808;
+  --card: #141414;
+  --white: #f8f5ed;
+  --muted: #b9b5aa;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  width: min(1120px, 90%);
+  margin: auto;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(8,8,8,.96);
+  border-bottom: 1px solid rgba(214,169,54,.35);
+}
+
+nav {
+  min-height: 75px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo {
+  color: var(--gold);
+  font-family: 'Playfair Display', serif;
+  font-size: 25px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: none;
+}
+
+.nav-links::-webkit-scrollbar {
+  display: none;
+}
+
+.nav-links a {
+  font-size: 13px;
+  transition: .3s;
+}
+
+.nav-links a:hover {
+  color: var(--gold);
+}
+
+.hero {
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  background:
+    linear-gradient(90deg,rgba(0,0,0,.92),rgba(0,0,0,.48)),
+    url('https://images.unsplash.com/photo-1530549387789-4c1017266635?auto=format&fit=crop&w=1800&q=85') center/cover;
+}
+
+.hero-content {
+  padding: 100px 0;
+  max-width: 720px;
+}
+
+.eyebrow {
+  color: var(--gold);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+
+h1,h2,h3 {
+  font-family: 'Playfair Display',serif;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: clamp(42px,7vw,76px);
+  margin-bottom: 22px;
+  overflow-wrap: break-word;
+}
+
+h1 span,.gold {
+  color: var(--gold);
+}
+
+.hero p {
+  color: #e4e0d8;
+  max-width: 600px;
+  font-size: 17px;
+  margin-bottom: 32px;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--gold);
+  color: #080808;
+  padding: 13px 27px;
+  border-radius: 3px;
+  font-weight: 700;
+  transition: .3s;
+  border: 1px solid var(--gold);
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: transparent;
+  color: var(--gold);
+}
+
+.btn:disabled {
+  opacity: .6;
+  cursor: not-allowed;
+}
+
+section {
+  padding: 85px 0;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.section-heading h2 {
+  font-size: clamp(30px,5vw,43px);
+  margin-bottom: 12px;
+}
+
+.section-heading p {
+  color: var(--muted);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 45px;
+  align-items: center;
+}
+
+.about-image {
+  min-height: 390px;
+  border-radius: 8px;
+  background:
+    linear-gradient(0deg,rgba(0,0,0,.2),transparent),
+    url('https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=1000&q=85') center/cover;
+}
+
+.about-text h2 {
+  font-size: 38px;
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  color: var(--muted);
+  margin-bottom: 17px;
+}
+
+.location {
+  color: var(--gold) !important;
+  margin-top: 20px;
+}
+
+.services,.enquiry {
+  background: #101010;
+}
+
+.service-grid,.package-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 22px;
+}
+
+.service-card,.package-card {
+  background: var(--card);
+  border: 1px solid #29251b;
+  padding: 28px;
+  border-radius: 7px;
+  transition: .3s;
+}
+
+.service-card:hover,.package-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--gold);
+}
+
+.service-number {
+  color: var(--gold);
+  font-family: 'Playfair Display',serif;
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+
+.service-card h3,.package-card h3 {
+  font-size: 21px;
+  margin-bottom: 12px;
+}
+
+.service-card p,.package-card p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.quotes {
+  background: #0d0d0d;
+}
+
+.quote-card {
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+  padding: 38px;
+  border-left: 3px solid var(--gold);
+  background: var(--card);
+}
+
+.quote-card p {
+  font-family: 'Playfair Display',serif;
+  font-size: clamp(22px,4vw,31px);
+  font-style: italic;
+}
+
+.quote-card span {
+  display: block;
+  color: var(--gold);
+  margin-top: 18px;
+  letter-spacing: 2px;
+  font-size: 12px;
+}
+
+.package-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 245px;
+}
+
+.package-price {
+  color: var(--gold) !important;
+  font-size: 23px !important;
+  font-weight: 700;
+  margin: 12px 0;
+}
+
+.package-note {
+  margin-top: auto;
+  padding-top: 16px;
+  color: var(--light-gold) !important;
+  font-size: 13px !important;
+}
+
+.form-container {
+  max-width: 800px;
+  margin: auto;
+  padding: 35px;
+  background: var(--card);
+  border: 1px solid #332b1c;
+  border-radius: 8px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.form-group.full {
+  grid-column: 1/-1;
+}
+
+label {
+  font-size: 13px;
+  color: var(--light-gold);
+}
+
+input,select,textarea {
+  width: 100%;
+  padding: 13px;
+  background: #090909;
+  border: 1px solid #39342a;
+  border-radius: 4px;
+  color: white;
+  font: inherit;
+  outline: none;
+}
+
+input:focus,select:focus,textarea:focus {
+  border-color: var(--gold);
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.form-container button {
+  width: 100%;
+  font: inherit;
+  font-weight: 700;
+}
+
+#formStatus {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+#whatsappResult {
+  display: none;
+  margin-top: 20px;
+}
+
+#whatsappLink {
+  display: block;
+  text-align: center;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 20px;
+  text-align: center;
+}
+
+.contact-card {
+  background: var(--card);
+  padding: 28px 15px;
+  border-radius: 6px;
+  border: 1px solid #302819;
+}
+
+.contact-card h3 {
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+
+.contact-card p {
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+
+footer {
+  background: #050505;
+  border-top: 1px solid #40331a;
+  text-align: center;
+  padding: 30px 15px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+footer span {
+  color: var(--gold);
+}
+
+@media(max-width:800px) {
+  nav {
+    align-items: center;
+    flex-direction: column;
+    padding: 12px 0;
+    gap: 8px;
+  }
+
+  .nav-links {
+    width: 100%;
+    padding-bottom: 7px;
+    justify-content: flex-start;
+    gap: 22px;
+  }
+
+  .hero {
+    min-height: 520px;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-image {
+    min-height: 280px;
+  }
+
+  .service-grid,.package-grid {
+    grid-template-columns: repeat(2,1fr);
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media(max-width:520px) {
+  section {
+    padding: 65px 0;
+  }
+
+  .service-grid,.package-grid,.form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-group.full {
+    grid-column: auto;
+  }
+
+  .form-container {
+    padding: 22px 17px;
+  }
+
+  .hero-content {
+    padding: 75px 0;
+  }
+
+  .hero p {
+    font-size: 15px;
+  }
+
+  .about-text h2 {
+    font-size: 32px;
+  }
+}
+</style>
 </head>
 
 <body>
 
 <header>
-  <nav class="container">
-    <a href="#home" class="logo">COACH MIKE</a>
-
-    <div class="nav-links">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#quotes">Quotes</a>
-      <a href="#packages">Packages</a>
-      <a href="#enquiry">Enquiry</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </nav>
+<nav class="container">
+  <a href="#home" class="logo">COACH MIKE</a>
+  <div class="nav-links">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#quotes">Quotes</a>
+    <a href="#packages">Packages</a>
+    <a href="#enquiry">Enquiry</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
 </header>
 
 <main>
 
-  <section class="hero" id="home">
-    <div class="container">
-      <div class="hero-content">
-        <div class="eyebrow">Swimming Coach & Aquatic Supervisor</div>
-        <h1>Every Stroke Begins with <span>Confidence.</span></h1>
-        <p>
-          Expert swimming instruction, water safety, and personalised
-          coaching for every age and ability.
-        </p>
-        <a href="#enquiry" class="btn">Book a Swimming Session</a>
-      </div>
-    </div>
-  </section>
+<section class="hero" id="home">
+<div class="container">
+  <div class="hero-content">
+    <div class="eyebrow">Swimming Coach & Aquatic Supervisor</div>
+    <h1>Every Stroke Begins with <span>Confidence.</span></h1>
+    <p>Expert swimming instruction, water safety, and personalised coaching for every age and ability.</p>
+    <a href="#enquiry" class="btn">Book a Swimming Session</a>
+  </div>
+</div>
+</section>
 
-  <section id="about">
-    <div class="container about-grid">
-      <div class="about-image" role="img" aria-label="Swimming pool"></div>
+<section id="about">
+<div class="container about-grid">
+  <div class="about-image" role="img" aria-label="Swimming pool"></div>
+  <div class="about-text">
+    <div class="eyebrow">Get to know your coach</div>
+    <h2>Meet <span class="gold">Coach Mike</span></h2>
+    <p>Swimming is more than a skill. It is confidence, discipline, safety and personal growth.</p>
+    <p>Coach Mike offers personalised swimming instruction and aquatic training designed to help learners develop their abilities at every stage.</p>
+    <p>Whether you are learning to swim for the first time, improving your performance or building water confidence, you are welcome.</p>
+    <p class="location">Training Location: Ocean City Water Park, Mirema, Kenya.</p>
+  </div>
+</div>
+</section>
 
-      <div class="about-text">
-        <div class="eyebrow">Get to know your coach</div>
-        <h2>Meet <span class="gold">Coach Mike</span></h2>
-        <p>
-          Swimming is more than a skill. It is confidence, discipline,
-          safety and personal growth.
-        </p>
-        <p>
-          Coach Mike offers personalised swimming instruction and
-          aquatic training designed to help learners develop their
-          abilities at every stage.
-        </p>
-        <p>
-          Whether you are learning to swim for the first time,
-          improving your performance or building water confidence,
-          you are welcome.
-        </p>
-        <p class="location">
-          Training Location: Ocean City Water Park, Mirema, Kenya.
-        </p>
-      </div>
-    </div>
-  </section>
+<section class="services" id="services">
+<div class="container">
+  <div class="section-heading">
+    <div class="eyebrow">What I offer</div>
+    <h2>My <span class="gold">Services</span></h2>
+    <p>Professional aquatic training for different needs and abilities.</p>
+  </div>
 
-  <section class="services" id="services">
-    <div class="container">
-      <div class="section-heading">
-        <div class="eyebrow">What I offer</div>
-        <h2>My <span class="gold">Services</span></h2>
-        <p>Professional aquatic training for different needs and abilities.</p>
-      </div>
+  <div class="service-grid">
+    <article class="service-card">
+      <div class="service-number">01</div>
+      <h3>Learn to Swim</h3>
+      <p>Swimming lessons for beginners who want to build confidence and learn essential swimming skills.</p>
+    </article>
 
-      <div class="service-grid">
-        <article class="service-card">
-          <div class="service-number">01</div>
-          <h3>Learn to Swim</h3>
-          <p>Swimming lessons for beginners who want to build confidence and learn essential swimming skills.</p>
-        </article>
+    <article class="service-card">
+      <div class="service-number">02</div>
+      <h3>Elite / Athlete Training</h3>
+      <p>Structured training for swimmers looking to improve technique, endurance, speed and performance.</p>
+    </article>
 
-        <article class="service-card">
-          <div class="service-number">02</div>
-          <h3>Elite / Athlete Training</h3>
-          <p>Structured training for swimmers looking to improve technique, endurance, speed and performance.</p>
-        </article>
+    <article class="service-card">
+      <div class="service-number">03</div>
+      <h3>Para Swimming</h3>
+      <p>Personalised swimming instruction for people with disabilities, with attention to individual abilities and needs.</p>
+    </article>
 
-        <article class="service-card">
-          <div class="service-number">03</div>
-          <h3>Para Swimming</h3>
-          <p>Personalised swimming instruction for people with disabilities, with attention to individual abilities and needs.</p>
-        </article>
+    <article class="service-card">
+      <div class="service-number">04</div>
+      <h3>Water Safety</h3>
+      <p>Learn essential water safety skills, awareness and techniques for safer experiences in and around water.</p>
+    </article>
 
-        <article class="service-card">
-          <div class="service-number">04</div>
-          <h3>Water Safety</h3>
-          <p>Learn essential water safety skills, awareness and techniques for safer experiences in and around water.</p>
-        </article>
+    <article class="service-card">
+      <div class="service-number">05</div>
+      <h3>Lifeguarding</h3>
+      <p>Aquatic supervision and lifeguarding services focused on safety and responsible pool management.</p>
+    </article>
 
-        <article class="service-card">
-          <div class="service-number">05</div>
-          <h3>Lifeguarding</h3>
-          <p>Aquatic supervision and lifeguarding services focused on safety and responsible pool management.</p>
-        </article>
+    <article class="service-card">
+      <div class="service-number">06</div>
+      <h3>Masters Swimmers Programme</h3>
+      <p>Swimming sessions for adult swimmers who want to maintain fitness, develop technique and enjoy swimming.</p>
+    </article>
+  </div>
+</div>
+</section>
 
-        <article class="service-card">
-          <div class="service-number">06</div>
-          <h3>Masters Swimmers Programme</h3>
-          <p>Swimming sessions for adult swimmers who want to maintain fitness, develop technique and enjoy swimming.</p>
-        </article>
-      </div>
-    </div>
-  </section>
+<section class="quotes" id="quotes">
+<div class="container">
+  <div class="section-heading">
+    <div class="eyebrow">Words to swim by</div>
+    <h2>Swimming <span class="gold">Inspiration</span></h2>
+  </div>
+  <div class="quote-card">
+    <p>"The water is your opportunity to discover what you are capable of."</p>
+    <span>COACH MIKE</span>
+  </div>
+</div>
+</section>
 
-  <section class="quotes" id="quotes">
-    <div class="container">
-      <div class="section-heading">
-        <div class="eyebrow">Words to swim by</div>
-        <h2>Swimming <span class="gold">Inspiration</span></h2>
-      </div>
+<section id="packages">
+<div class="container">
+  <div class="section-heading">
+    <div class="eyebrow">Choose your programme</div>
+    <h2>Training <span class="gold">Packages</span></h2>
+    <p>Find a programme that suits your goals.</p>
+  </div>
 
-      <div class="quote-card">
-        <p>"The water is your opportunity to discover what you are capable of."</p>
-        <span>COACH MIKE</span>
-      </div>
-    </div>
-  </section>
+  <div class="package-grid">
+    <article class="package-card">
+      <h3>Learn to Swim</h3>
+      <p class="package-price">KES 10,000</p>
+      <p>12 swimming sessions.</p>
+      <p class="package-note">Ideal for beginners.</p>
+    </article>
 
-  <section id="packages">
-    <div class="container">
-      <div class="section-heading">
-        <div class="eyebrow">Choose your programme</div>
-        <h2>Training <span class="gold">Packages</span></h2>
-        <p>Find a programme that suits your goals.</p>
-      </div>
+    <article class="package-card">
+      <h3>Elite / Athlete Training</h3>
+      <p class="package-price">KES 6,000</p>
+      <p>Monthly training package.</p>
+      <p class="package-note">3–4 sessions per week.</p>
+    </article>
 
-      <div class="package-grid">
+    <article class="package-card">
+      <h3>Para Swimming / People with Disabilities</h3>
+      <p class="package-price">KES 12,000</p>
+      <p>Monthly personalised training.</p>
+      <p class="package-note">2 sessions per week.</p>
+    </article>
 
-        <article class="package-card">
-          <h3>Learn to Swim</h3>
-          <p class="package-price">KES 10,000</p>
-          <p>12 swimming sessions.</p>
-          <p class="package-note">Ideal for beginners.</p>
-        </article>
+    <article class="package-card">
+      <h3>Water Safety</h3>
+      <p class="package-price">KES 10,000</p>
+      <p>12 training sessions.</p>
+      <p class="package-note">Build essential water safety skills.</p>
+    </article>
 
-        <article class="package-card">
-          <h3>Elite / Athlete Training</h3>
-          <p class="package-price">KES 6,000</p>
-          <p>Monthly training package.</p>
-          <p class="package-note">3–4 sessions per week.</p>
-        </article>
+    <article class="package-card">
+      <h3>Lifeguarding</h3>
+      <p class="package-price">KES 1,500</p>
+      <p>Daily rate.</p>
+      <p class="package-note">Contact for arrangements.</p>
+    </article>
 
-        <article class="package-card">
-          <h3>Para Swimming / People with Disabilities</h3>
-          <p class="package-price">KES 12,000</p>
-          <p>Monthly personalised training.</p>
-          <p class="package-note">2 sessions per week.</p>
-        </article>
+    <article class="package-card">
+      <h3>Masters Swimmers Programme</h3>
+      <p class="package-price">Contact Us</p>
+      <p>Structured swimming sessions for adult swimmers.</p>
+      <p class="package-note">3 days per week.</p>
+    </article>
+  </div>
+</div>
+</section>
 
-        <article class="package-card">
-          <h3>Water Safety</h3>
-          <p class="package-price">KES 10,000</p>
-          <p>12 training sessions.</p>
-          <p class="package-note">Build essential water safety skills.</p>
-        </article>
+<section class="enquiry" id="enquiry">
+<div class="container">
+  <div class="section-heading">
+    <div class="eyebrow">Start your swimming journey</div>
+    <h2>Make an <span class="gold">Enquiry</span></h2>
+    <p>Fill in the form and Coach Mike will get back to you.</p>
+  </div>
 
-        <article class="package-card">
-          <h3>Lifeguarding</h3>
-          <p class="package-price">KES 1,500</p>
-          <p>Daily rate.</p>
-          <p class="package-note">Contact for arrangements.</p>
-        </article>
+  <div class="form-container">
+    <form id="enquiryForm">
 
-        <article class="package-card">
-          <h3>Masters Swimmers Programme</h3>
-          <p class="package-price">Contact Us</p>
-          <p>Structured swimming sessions for adult swimmers.</p>
-          <p class="package-note">3 days per week.</p>
-        </article>
+      <div class="form-grid">
 
-      </div>
-    </div>
-  </section>
-
-  <section class="enquiry" id="enquiry">
-    <div class="container">
-      <div class="section-heading">
-        <div class="eyebrow">Start your swimming journey</div>
-        <h2>Make an <span class="gold">Enquiry</span></h2>
-        <p>Fill in the form and Coach Mike will get back to you.</p>
-      </div>
-
-      <div class="form-container">
-        <form action="https://formsubmit.co/michaelokoth@gmail.com" method="POST">
-
-          <input type="hidden" name="_subject" value="New Swimming Enquiry - Coach Mike">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_captcha" value="false">
-
-          <div class="form-grid">
-
-            <div class="form-group">
-              <label for="name">Full Name</label>
-              <input type="text" id="name" name="Full Name" placeholder="Your full name" required>
-            </div>
-
-            <div class="form-group">
-              <label for="email">Email Address</label>
-              <input type="email" id="email" name="Email" placeholder="Your email address" required>
-            </div>
-
-            <div class="form-group">
-              <label for="phone">Phone Number</label>
-              <input type="tel" id="phone" name="Phone Number" placeholder="Your phone number" required>
-            </div>
-
-            <div class="form-group">
-              <label for="service">Service Needed</label>
-              <select id="service" name="Service Needed" required>
-                <option value="">Select a service</option>
-                <option>Learn to Swim</option>
-                <option>Elite / Athlete Training</option>
-                <option>Para Swimming / People with Disabilities</option>
-                <option>Water Safety</option>
-                <option>Lifeguarding</option>
-                <option>Masters Swimmers Programme</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="learner">Learner Type</label>
-              <select id="learner" name="Learner Type" required>
-                <option value="">Select learner type</option>
-                <option>Child</option>
-                <option>Teenager</option>
-                <option>Adult</option>
-                <option>Senior</option>
-                <option>Person with a disability</option>
-                <option>Group</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="date">Preferred Date</label>
-              <input type="date" id="date" name="Preferred Date">
-            </div>
-
-            <div class="form-group full">
-              <label for="location">Preferred Swimming Location</label>
-              <input type="text" id="location" name="Preferred Swimming Location" value="Ocean City Water Park, Mirema">
-            </div>
-
-            <div class="form-group full">
-              <label for="message">Additional Information</label>
-              <textarea id="message" name="Additional Information" placeholder="Tell us about your swimming goals or any special requirements."></textarea>
-            </div>
-
-          </div>
-
-          <button type="submit" class="btn">Submit Enquiry</button>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact">
-    <div class="container">
-      <div class="section-heading">
-        <div class="eyebrow">Let's connect</div>
-        <h2>Let's Get <span class="gold">Started</span></h2>
-        <p>Have a question or ready to begin? Get in touch.</p>
-      </div>
-
-      <div class="contact-grid">
-
-        <div class="contact-card">
-          <h3>Call / WhatsApp</h3>
-          <p><a href="https://wa.me/254116088816">+254 116 088 816</a></p>
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" placeholder="Your full name" required>
         </div>
 
-        <div class="contact-card">
-          <h3>Email</h3>
-          <p><a href="mailto:michaelokoth@gmail.com">michaelokoth@gmail.com</a></p>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="Your email address" required>
         </div>
 
-        <div class="contact-card">
-          <h3>Location</h3>
-          <p>Ocean City Water Park, Mirema, Kenya</p>
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="Your phone number" required>
+        </div>
+
+        <div class="form-group">
+          <label for="service">Service Needed</label>
+          <select id="service" name="service" required>
+            <option value="">Select a service</option>
+            <option>Learn to Swim</option>
+            <option>Elite / Athlete Training</option>
+            <option>Para Swimming / People with Disabilities</option>
+            <option>Water Safety</option>
+            <option>Lifeguarding</option>
+            <option>Masters Swimmers Programme</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="learner">Learner Type</label>
+          <select id="learner" name="learner" required>
+            <option value="">Select learner type</option>
+            <option>Child</option>
+            <option>Teenager</option>
+            <option>Adult</option>
+            <option>Senior</option>
+            <option>Person with a disability</option>
+            <option>Group</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="date">Preferred Date</label>
+          <input type="date" id="date" name="preferred_date">
+        </div>
+
+        <div class="form-group full">
+          <label for="location">Preferred Swimming Location</label>
+          <input type="text" id="location" name="location" value="Ocean City Water Park, Mirema">
+        </div>
+
+        <div class="form-group full">
+          <label for="message">Additional Information</label>
+          <textarea id="message" name="message" placeholder="Tell us about your swimming goals or any special requirements."></textarea>
         </div>
 
       </div>
+
+      <button type="submit" class="btn" id="submitBtn">Submit Enquiry</button>
+
+      <p id="formStatus" role="status" aria-live="polite"></p>
+
+      <div id="whatsappResult">
+        <a id="whatsappLink" class="btn" target="_blank" rel="noopener noreferrer">
+          Send Enquiry on WhatsApp
+        </a>
+      </div>
+
+    </form>
+  </div>
+</div>
+</section>
+
+<section id="contact">
+<div class="container">
+  <div class="section-heading">
+    <div class="eyebrow">Let's connect</div>
+    <h2>Let's Get <span class="gold">Started</span></h2>
+    <p>Have a question or ready to begin? Get in touch.</p>
+  </div>
+
+  <div class="contact-grid">
+    <div class="contact-card">
+      <h3>Call / WhatsApp</h3>
+      <p><a href="https://wa.me/254116088816">+254 116 088 816</a></p>
     </div>
-  </section>
+
+    <div class="contact-card">
+      <h3>Email</h3>
+      <p><a href="mailto:michaelokoth@gmail.com">michaelokoth@gmail.com</a></p>
+    </div>
+
+    <div class="contact-card">
+      <h3>Location</h3>
+      <p>Ocean City Water Park, Mirema, Kenya</p>
+    </div>
+  </div>
+</div>
+</section>
 
 </main>
 
@@ -753,15 +750,96 @@
 </footer>
 
 <script>
-  document.getElementById("year").textContent = new Date().getFullYear();
+document.getElementById("year").textContent = new Date().getFullYear();
 
-  const dateInput = document.getElementById("date");
-  const today = new Date();
-  const localToday = new Date(
-    today.getTime() - today.getTimezoneOffset() * 60000
-  ).toISOString().split("T")[0];
+const dateInput = document.getElementById("date");
+const today = new Date();
+const localToday = new Date(
+  today.getTime() - today.getTimezoneOffset() * 60000
+).toISOString().split("T")[0];
 
-  dateInput.min = localToday;
+dateInput.min = localToday;
+
+const enquiryForm = document.getElementById("enquiryForm");
+const submitBtn = document.getElementById("submitBtn");
+const formStatus = document.getElementById("formStatus");
+const whatsappResult = document.getElementById("whatsappResult");
+const whatsappLink = document.getElementById("whatsappLink");
+
+enquiryForm.addEventListener("submit", async function(event) {
+  event.preventDefault();
+
+  submitBtn.disabled = true;
+  submitBtn.textContent = "Sending...";
+  formStatus.textContent = "";
+  whatsappResult.style.display = "none";
+
+  const formData = new FormData(enquiryForm);
+
+  formData.append("_subject", "New Swimming Enquiry - Coach Mike");
+  formData.append("_template", "table");
+  formData.append("_captcha", "false");
+
+  try {
+    const response = await fetch(
+      "https://formsubmit.co/ajax/michaelokoth@gmail.com",
+      {
+        method: "POST",
+        body: formData,
+        headers: {
+          "Accept": "application/json"
+        }
+      }
+    );
+
+    if (!response.ok) {
+      throw new Error("The email service could not be reached.");
+    }
+
+    const result = await response.json();
+
+    if (String(result.success).toLowerCase() !== "true") {
+      throw new Error(result.message || "The enquiry could not be delivered.");
+    }
+
+    const details = [
+      "NEW SWIMMING ENQUIRY - COACH MIKE",
+      "",
+      "Name: " + formData.get("name"),
+      "Email: " + formData.get("email"),
+      "Phone: " + formData.get("phone"),
+      "Service: " + formData.get("service"),
+      "Learner: " + formData.get("learner"),
+      "Preferred date: " + (formData.get("preferred_date") || "Not specified"),
+      "Location: " + formData.get("location"),
+      "Additional information: " + (formData.get("message") || "None")
+    ].join("\n");
+
+    whatsappLink.href =
+      "https://wa.me/254116088816?text=" +
+      encodeURIComponent(details);
+
+    formStatus.textContent =
+      "Your enquiry was submitted successfully! You can also send it to Coach Mike on WhatsApp.";
+
+    formStatus.style.color = "#d6a936";
+    whatsappResult.style.display = "block";
+
+    enquiryForm.reset();
+    dateInput.min = localToday;
+
+  } catch (error) {
+    formStatus.textContent =
+      "Sorry, your enquiry was not confirmed. Please try again or contact Coach Mike directly.";
+
+    formStatus.style.color = "#ff7777";
+    console.error("Form submission error:", error);
+
+  } finally {
+    submitBtn.disabled = false;
+    submitBtn.textContent = "Submit Enquiry";
+  }
+});
 </script>
 
 </body>
