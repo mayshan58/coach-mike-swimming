@@ -4,20 +4,26 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Professional swimming coaching, water safety, lifeguarding and aquatic training with Coach Mike in Nairobi, Kenya.">
-<title>Coach Mike | Professional Swimming Coach</title>
+
+<meta name="description" content="Coach Mike - Professional swimming coach, aquatic training, lifeguarding and water safety in Nairobi, Kenya.">
+
+<title>Coach Mike | Swimming & Aquatic Excellence</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
+<!-- EmailJS library -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
 <style>
 :root {
   --black: #080a0c;
-  --dark: #101419;
+  --dark: #11171c;
+  --card: #171e24;
   --gold: #c9a65b;
-  --light-gold: #e8d19a;
+  --light-gold: #ead7a7;
   --white: #f8f7f3;
-  --muted: #a6a8aa;
+  --muted: #a9afb5;
 }
 
 * {
@@ -48,7 +54,9 @@ button, input, select, textarea {
   margin: auto;
 }
 
-.gold { color: var(--gold); }
+.gold {
+  color: var(--gold);
+}
 
 .section {
   padding: 95px 0;
@@ -78,10 +86,38 @@ button, input, select, textarea {
   margin: auto;
 }
 
-/* NAVIGATION */
+.btn {
+  display: inline-block;
+  padding: 13px 25px;
+  background: var(--gold);
+  color: #080a0c;
+  border: 1px solid var(--gold);
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  transition: .3s;
+  text-align: center;
+}
+
+.btn:hover {
+  background: transparent;
+  color: var(--gold);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--gold);
+}
+
+button:disabled {
+  opacity: .6;
+  cursor: not-allowed;
+}
+
+/* HEADER */
 
 header {
-  background: rgba(8,10,12,.96);
+  background: rgba(8,10,12,.97);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -112,14 +148,13 @@ nav {
 
 .nav-links {
   display: flex;
-  gap: 27px;
+  gap: 25px;
   align-items: center;
 }
 
 .nav-links a {
   font-size: 13px;
   color: #ddd;
-  transition: .3s;
 }
 
 .nav-links a:hover {
@@ -130,41 +165,19 @@ nav {
   display: none;
   color: var(--gold);
   background: none;
-  border: 0;
+  border: none;
   font-size: 27px;
   cursor: pointer;
-}
-
-.btn {
-  display: inline-block;
-  padding: 13px 25px;
-  background: var(--gold);
-  color: #080a0c;
-  border: 1px solid var(--gold);
-  font-weight: 700;
-  font-size: 13px;
-  transition: .3s;
-  cursor: pointer;
-}
-
-.btn:hover {
-  background: transparent;
-  color: var(--gold);
-}
-
-.btn-outline {
-  background: transparent;
-  color: var(--gold);
 }
 
 /* HERO */
 
 .hero {
-  min-height: 650px;
+  min-height: 660px;
   display: flex;
   align-items: center;
   background:
-    linear-gradient(90deg, rgba(5,8,11,.95), rgba(5,8,11,.60), rgba(5,8,11,.25)),
+    linear-gradient(90deg, rgba(5,8,11,.96), rgba(5,8,11,.58), rgba(5,8,11,.25)),
     url('https://images.unsplash.com/photo-1530549387789-4c1017266635?auto=format&fit=crop&w=2000&q=85')
     center/cover no-repeat;
 }
@@ -194,7 +207,7 @@ nav {
 
 .hero p {
   color: #ddd;
-  max-width: 540px;
+  max-width: 550px;
   margin-bottom: 30px;
 }
 
@@ -204,7 +217,7 @@ nav {
   flex-wrap: wrap;
 }
 
-/* INTRODUCTION */
+/* ABOUT */
 
 .intro-grid {
   display: grid;
@@ -252,14 +265,14 @@ nav {
 }
 
 .service-card {
-  background: #171d22;
-  border: 1px solid rgba(201,166,91,.18);
+  background: var(--card);
+  border: 1px solid rgba(201,166,91,.2);
   overflow: hidden;
   transition: .3s;
 }
 
 .service-card:hover {
-  transform: translateY(-7px);
+  transform: translateY(-6px);
   border-color: var(--gold);
 }
 
@@ -299,7 +312,7 @@ nav {
   padding: 30px 25px;
   display: flex;
   flex-direction: column;
-  min-height: 280px;
+  min-height: 290px;
   transition: .3s;
 }
 
@@ -329,10 +342,9 @@ nav {
 
 .package-card .btn {
   margin-top: auto;
-  text-align: center;
 }
 
-/* WHY CHOOSE MIKE */
+/* WHY US */
 
 .why-section {
   background: #11171c;
@@ -350,7 +362,7 @@ nav {
   border: 1px solid rgba(201,166,91,.2);
 }
 
-.why-card .symbol {
+.symbol {
   color: var(--gold);
   font-size: 30px;
   margin-bottom: 15px;
@@ -376,7 +388,7 @@ nav {
 }
 
 .booking-wrapper {
-  max-width: 800px;
+  max-width: 850px;
   margin: auto;
   background: #11171c;
   padding: 38px;
@@ -427,6 +439,10 @@ nav {
   resize: vertical;
 }
 
+.form-group select option {
+  background: #11171c;
+}
+
 .booking-actions {
   grid-column: 1 / -1;
   display: flex;
@@ -436,13 +452,19 @@ nav {
 
 .booking-actions button {
   flex: 1;
-  min-width: 180px;
+  min-width: 190px;
 }
 
 .form-note {
   grid-column: 1 / -1;
   color: var(--muted);
   font-size: 12px;
+}
+
+#emailStatus {
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 5px;
 }
 
 /* CONTACT */
@@ -508,7 +530,7 @@ footer strong {
   color: var(--gold);
 }
 
-/* WHATSAPP FLOATING BUTTON */
+/* WHATSAPP BUTTON */
 
 .whatsapp-float {
   position: fixed;
@@ -522,8 +544,6 @@ footer strong {
   font-weight: 700;
   box-shadow: 0 5px 20px rgba(0,0,0,.4);
 }
-
-/* MOBILE */
 
 @media(max-width: 850px) {
   .nav-links {
@@ -845,6 +865,7 @@ footer strong {
     </div>
 
     <div class="booking-wrapper">
+
       <form class="booking-form" id="bookingForm">
 
         <div class="form-group">
@@ -910,6 +931,9 @@ footer strong {
         <p class="form-note">
           Your booking is an enquiry. Coach Mike will confirm availability and session details.
         </p>
+
+        <p id="emailStatus" class="form-note" role="status" aria-live="polite"></p>
+
       </form>
     </div>
   </div>
@@ -917,6 +941,7 @@ footer strong {
 
 <section class="section contact-section" id="contact">
   <div class="container">
+
     <div class="section-heading">
       <span>GET IN TOUCH</span>
       <h2>Let's Get Started</h2>
@@ -924,6 +949,7 @@ footer strong {
     </div>
 
     <div class="contact-grid">
+
       <div class="contact-info">
         <h3>Connect With <span class="gold">Coach Mike.</span></h3>
 
@@ -957,12 +983,14 @@ footer strong {
 
         <a class="btn" href="#booking">BOOK A SESSION</a>
         <br><br>
+
         <a class="btn btn-outline"
            href="https://wa.me/254116088816"
            target="_blank" rel="noopener">
           CHAT ON WHATSAPP
         </a>
       </div>
+
     </div>
   </div>
 </section>
@@ -984,6 +1012,31 @@ footer strong {
 </a>
 
 <script>
+// ====================================
+// EMAILJS CONFIGURATION
+// REPLACE THESE THREE VALUES
+// ====================================
+
+const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY";
+const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID";
+const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";
+
+// Check whether the credentials have been configured.
+const emailConfigured =
+  EMAILJS_PUBLIC_KEY !== "YOUR_PUBLIC_KEY" &&
+  EMAILJS_SERVICE_ID !== "YOUR_SERVICE_ID" &&
+  EMAILJS_TEMPLATE_ID !== "YOUR_TEMPLATE_ID";
+
+if (emailConfigured && window.emailjs) {
+  emailjs.init({
+    publicKey: EMAILJS_PUBLIC_KEY
+  });
+}
+
+// ====================================
+// MOBILE NAVIGATION
+// ====================================
+
 const menuBtn = document.getElementById("menuBtn");
 const navLinks = document.getElementById("navLinks");
 
@@ -997,25 +1050,44 @@ document.querySelectorAll(".nav-links a").forEach(link => {
   });
 });
 
-document.getElementById("year").textContent = new Date().getFullYear();
+// ====================================
+// YEAR
+// ====================================
 
-// Prevent selecting a past date
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+// ====================================
+// DATE VALIDATION
+// ====================================
+
 const dateInput = document.getElementById("date");
+
 const today = new Date();
+
 const localToday = new Date(
   today.getTime() - today.getTimezoneOffset() * 60000
 ).toISOString().split("T")[0];
 
 dateInput.min = localToday;
 
-// Collect booking information
+// ====================================
+// GET BOOKING DETAILS
+// ====================================
+
 function getBookingDetails() {
+
   const fields = [
-    "name", "phone", "service",
-    "learner", "date", "location"
+    "name",
+    "phone",
+    "service",
+    "learner",
+    "date",
+    "location"
   ];
 
   for (const field of fields) {
+
     const element = document.getElementById(field);
 
     if (!element.value.trim()) {
@@ -1032,13 +1104,18 @@ function getBookingDetails() {
     learner: document.getElementById("learner").value,
     date: document.getElementById("date").value,
     location: document.getElementById("location").value.trim(),
-    message: document.getElementById("message").value.trim()
+    message: document.getElementById("message").value.trim() || "None"
   };
 }
 
-// WhatsApp booking
+// ====================================
+// WHATSAPP BOOKING
+// ====================================
+
 document.getElementById("whatsappBtn").addEventListener("click", () => {
+
   const data = getBookingDetails();
+
   if (!data) return;
 
   const message =
@@ -1054,7 +1131,7 @@ Preferred Date: ${data.date}
 Location: ${data.location}
 
 Additional Information:
-${data.message || "None"}
+${data.message}
 
 Kindly let me know your availability and the next steps.
 
@@ -1067,39 +1144,76 @@ Thank you.`;
   window.open(whatsappURL, "_blank", "noopener");
 });
 
-// Email enquiry
-// This opens the visitor's email application.
-// For automatic website email delivery, configure EmailJS separately.
-document.getElementById("emailBtn").addEventListener("click", () => {
+// ====================================
+// DIRECT EMAIL THROUGH EMAILJS
+// ====================================
+
+const emailBtn = document.getElementById("emailBtn");
+const emailStatus = document.getElementById("emailStatus");
+
+emailBtn.addEventListener("click", async function () {
+
   const data = getBookingDetails();
+
   if (!data) return;
 
-  const subject = "Swimming Session Booking Enquiry";
-  const body =
-`Hello Coach Mike,
+  if (!emailConfigured || !window.emailjs) {
 
-I would like to make a booking enquiry.
+    emailStatus.textContent =
+      "Email setup is incomplete. Please configure your EmailJS credentials.";
 
-Name: ${data.name}
-Phone: ${data.phone}
-Service: ${data.service}
-Learner: ${data.learner}
-Preferred Date: ${data.date}
-Location: ${data.location}
+    emailStatus.style.color = "#ff7777";
 
-Additional Information:
-${data.message || "None"}
+    return;
+  }
 
-Kindly confirm your availability.
+  emailBtn.disabled = true;
+  emailBtn.textContent = "SENDING...";
 
-Thank you.`;
+  emailStatus.textContent =
+    "Sending your booking enquiry...";
 
-  const emailURL =
-    "mailto:michaelokoth@gmail.com?subject=" +
-    encodeURIComponent(subject) +
-    "&body=" + encodeURIComponent(body);
+  emailStatus.style.color = "#ead7a7";
 
-  window.location.href = emailURL;
+  try {
+
+    await emailjs.send(
+      EMAILJS_SERVICE_ID,
+      EMAILJS_TEMPLATE_ID,
+      {
+        name: data.name,
+        phone: data.phone,
+        service: data.service,
+        learner: data.learner,
+        date: data.date,
+        location: data.location,
+        message: data.message
+      }
+    );
+
+    emailStatus.textContent =
+      "Success! Your booking enquiry has been sent to Coach Mike.";
+
+    emailStatus.style.color = "#70d69b";
+
+    document.getElementById("bookingForm").reset();
+
+  } catch (error) {
+
+    console.error("EmailJS error:", error);
+
+    emailStatus.textContent =
+      "Email could not be sent. Please check your EmailJS settings or use WhatsApp.";
+
+    emailStatus.style.color = "#ff7777";
+
+  } finally {
+
+    emailBtn.disabled = false;
+    emailBtn.textContent = "SEND VIA EMAIL";
+
+  }
+
 });
 </script>
 
