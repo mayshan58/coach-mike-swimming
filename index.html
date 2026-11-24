@@ -5,15 +5,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="description" content="Coach Mike - Professional swimming coach, aquatic training, lifeguarding and water safety in Nairobi, Kenya.">
+<meta name="description" content="Coach Mike - Professional swimming coaching, water safety, lifeguarding and aquatic training in Nairobi, Kenya.">
 
 <title>Coach Mike | Swimming & Aquatic Excellence</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
-
-<!-- EmailJS library -->
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
 <style>
 :root {
@@ -109,11 +106,6 @@ button, input, select, textarea {
   color: var(--gold);
 }
 
-button:disabled {
-  opacity: .6;
-  cursor: not-allowed;
-}
-
 /* HEADER */
 
 header {
@@ -155,6 +147,7 @@ nav {
 .nav-links a {
   font-size: 13px;
   color: #ddd;
+  transition: .3s;
 }
 
 .nav-links a:hover {
@@ -344,7 +337,7 @@ nav {
   margin-top: auto;
 }
 
-/* WHY US */
+/* WHY CHOOSE MIKE */
 
 .why-section {
   background: #11171c;
@@ -450,7 +443,8 @@ nav {
   flex-wrap: wrap;
 }
 
-.booking-actions button {
+.booking-actions button,
+.booking-actions a {
   flex: 1;
   min-width: 190px;
 }
@@ -459,12 +453,6 @@ nav {
   grid-column: 1 / -1;
   color: var(--muted);
   font-size: 12px;
-}
-
-#emailStatus {
-  font-size: 14px;
-  font-weight: 600;
-  margin-top: 5px;
 }
 
 /* CONTACT */
@@ -494,6 +482,14 @@ nav {
   color: var(--gold);
   display: block;
   font-size: 13px;
+}
+
+.contact-item a {
+  color: var(--muted);
+}
+
+.contact-item a:hover {
+  color: var(--gold);
 }
 
 .contact-panel {
@@ -530,7 +526,7 @@ footer strong {
   color: var(--gold);
 }
 
-/* WHATSAPP BUTTON */
+/* WHATSAPP FLOATING BUTTON */
 
 .whatsapp-float {
   position: fixed;
@@ -544,6 +540,8 @@ footer strong {
   font-weight: 700;
   box-shadow: 0 5px 20px rgba(0,0,0,.4);
 }
+
+/* MOBILE */
 
 @media(max-width: 850px) {
   .nav-links {
@@ -618,15 +616,22 @@ footer strong {
     padding: 12px 16px;
     font-size: 13px;
   }
+
+  .booking-actions {
+    flex-direction: column;
+  }
 }
 </style>
 </head>
 
 <body>
 
+<!-- NAVIGATION -->
+
 <header>
   <div class="container">
     <nav>
+
       <a href="#home" class="logo">
         COACH MIKE
         <small>SWIMMING & AQUATIC COACH</small>
@@ -642,16 +647,23 @@ footer strong {
         <a href="#booking">Book a Session</a>
         <a href="#contact">Contact</a>
       </div>
+
     </nav>
   </div>
 </header>
 
 <main>
 
+<!-- HERO SECTION -->
+
 <section class="hero" id="home">
   <div class="container">
+
     <div class="hero-content">
-      <span class="hero-label">Professional Swimming Coaching</span>
+
+      <span class="hero-label">
+        Professional Swimming Coaching
+      </span>
 
       <h1>
         BUILDING CONFIDENCE
@@ -668,19 +680,30 @@ footer strong {
         <a href="#packages" class="btn">VIEW PACKAGES</a>
         <a href="#booking" class="btn btn-outline">BOOK A SESSION</a>
       </div>
+
     </div>
   </div>
 </section>
 
+<!-- ABOUT SECTION -->
+
 <section class="section" id="about">
   <div class="container intro-grid">
+
     <div class="intro-image">
-      <img src="https://images.unsplash.com/photo-1560090995-01632a28895b?auto=format&fit=crop&w=1000&q=85" alt="Swimming pool">
+      <img
+        src="https://images.unsplash.com/photo-1560090995-01632a28895b?auto=format&fit=crop&w=1000&q=85"
+        alt="Swimming pool">
     </div>
 
     <div class="intro-text">
+
       <span class="eyebrow">ABOUT COACH MIKE</span>
-      <h2>More Than Swimming. <span class="gold">A Lifelong Skill.</span></h2>
+
+      <h2>
+        More Than Swimming.
+        <span class="gold">A Lifelong Skill.</span>
+      </h2>
 
       <p>
         Coach Mike is dedicated to developing confident swimmers through
@@ -699,16 +722,23 @@ footer strong {
       </p>
 
       <a href="#booking" class="btn">START YOUR JOURNEY</a>
+
     </div>
   </div>
 </section>
 
+<!-- SERVICES SECTION -->
+
 <section class="section services-section" id="services">
   <div class="container">
+
     <div class="section-heading">
       <span>WHAT WE OFFER</span>
       <h2>Professional Aquatic Services</h2>
-      <p>Personalised coaching and aquatic services for different ages, abilities and goals.</p>
+      <p>
+        Personalised coaching and aquatic services for different ages,
+        abilities and goals.
+      </p>
     </div>
 
     <div class="services-grid">
@@ -717,7 +747,10 @@ footer strong {
         <img src="https://images.unsplash.com/photo-1530549387789-4c1017266635?auto=format&fit=crop&w=800&q=80" alt="Swimming lessons">
         <div class="service-content">
           <h3>Learn to Swim</h3>
-          <p>Build water confidence, learn swimming fundamentals and develop proper swimming techniques.</p>
+          <p>
+            Build water confidence, learn swimming fundamentals and
+            develop proper swimming techniques.
+          </p>
         </div>
       </article>
 
@@ -725,7 +758,10 @@ footer strong {
         <img src="https://images.unsplash.com/photo-1519315901367-f34ff9154487?auto=format&fit=crop&w=800&q=80" alt="Athlete swimming">
         <div class="service-content">
           <h3>Elite & Athlete Training</h3>
-          <p>Structured performance training focused on technique, endurance, speed and competition preparation.</p>
+          <p>
+            Structured performance training focused on technique,
+            endurance, speed and competition preparation.
+          </p>
         </div>
       </article>
 
@@ -733,7 +769,10 @@ footer strong {
         <img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=800&q=80" alt="Water safety">
         <div class="service-content">
           <h3>Water Safety</h3>
-          <p>Learn essential water awareness, safe swimming practices and survival skills.</p>
+          <p>
+            Learn essential water awareness, safe swimming practices
+            and survival skills.
+          </p>
         </div>
       </article>
 
@@ -741,7 +780,10 @@ footer strong {
         <img src="https://images.unsplash.com/photo-1560090995-01632a28895b?auto=format&fit=crop&w=800&q=80" alt="Lifeguarding">
         <div class="service-content">
           <h3>Lifeguarding</h3>
-          <p>Professional lifeguarding services and aquatic supervision. Contact Coach Mike for availability.</p>
+          <p>
+            Professional lifeguarding services and aquatic supervision.
+            Contact Coach Mike for availability.
+          </p>
         </div>
       </article>
 
@@ -749,7 +791,10 @@ footer strong {
         <img src="https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=800&q=80" alt="Masters swimming">
         <div class="service-content">
           <h3>Masters Swimming</h3>
-          <p>Swimming sessions for adults looking to maintain fitness, improve technique and enjoy structured training.</p>
+          <p>
+            Swimming sessions for adults looking to maintain fitness,
+            improve technique and enjoy structured training.
+          </p>
         </div>
       </article>
 
@@ -757,7 +802,10 @@ footer strong {
         <img src="https://images.unsplash.com/photo-1530549387789-4c1017266635?auto=format&fit=crop&w=800&q=80" alt="Adaptive swimming">
         <div class="service-content">
           <h3>Para & Adaptive Swimming</h3>
-          <p>Individualised swimming sessions adapted to different abilities and accessibility needs.</p>
+          <p>
+            Individualised swimming sessions adapted to different
+            abilities and accessibility needs.
+          </p>
         </div>
       </article>
 
@@ -765,8 +813,11 @@ footer strong {
   </div>
 </section>
 
+<!-- PACKAGES SECTION -->
+
 <section class="section" id="packages">
   <div class="container">
+
     <div class="section-heading">
       <span>INVEST IN YOUR SKILLS</span>
       <h2>Training Packages</h2>
@@ -813,7 +864,10 @@ footer strong {
       <div class="package-card">
         <h3>Masters Swimming</h3>
         <div class="price">3 Days / Week</div>
-        <p>Structured swimming sessions for adults. Contact Coach Mike for pricing.</p>
+        <p>
+          Structured swimming sessions for adults.
+          Contact Coach Mike for pricing.
+        </p>
         <a href="#booking" class="btn">MAKE AN ENQUIRY</a>
       </div>
 
@@ -821,14 +875,18 @@ footer strong {
   </div>
 </section>
 
+<!-- WHY CHOOSE MIKE -->
+
 <section class="section why-section">
   <div class="container">
+
     <div class="section-heading">
       <span>THE COACH MIKE EXPERIENCE</span>
       <h2>Why Train With Coach Mike?</h2>
     </div>
 
     <div class="why-grid">
+
       <div class="why-card">
         <div class="symbol">✦</div>
         <h3>Personalised Coaching</h3>
@@ -852,16 +910,23 @@ footer strong {
         <h3>All Skill Levels</h3>
         <p>Programmes for beginners, adults and athletes.</p>
       </div>
+
     </div>
   </div>
 </section>
 
+<!-- BOOKING SECTION -->
+
 <section class="section booking-section" id="booking">
   <div class="container">
+
     <div class="section-heading">
       <span>YOUR NEXT CHAPTER STARTS HERE</span>
       <h2>Book a Swimming Session</h2>
-      <p>Complete the form and send your enquiry directly to Coach Mike.</p>
+      <p>
+        Complete the form and choose whether to contact Coach Mike
+        through WhatsApp or a direct phone call.
+      </p>
     </div>
 
     <div class="booking-wrapper">
@@ -919,25 +984,28 @@ footer strong {
         </div>
 
         <div class="booking-actions">
+
           <button type="button" class="btn" id="whatsappBtn">
             SEND VIA WHATSAPP
           </button>
 
-          <button type="button" class="btn btn-outline" id="emailBtn">
-            SEND VIA EMAIL
-          </button>
+          <a href="tel:+254116088816" class="btn btn-outline">
+            CALL COACH MIKE
+          </a>
+
         </div>
 
         <p class="form-note">
-          Your booking is an enquiry. Coach Mike will confirm availability and session details.
+          Your booking is an enquiry. Coach Mike will confirm availability
+          and session details.
         </p>
-
-        <p id="emailStatus" class="form-note" role="status" aria-live="polite"></p>
 
       </form>
     </div>
   </div>
 </section>
+
+<!-- CONTACT SECTION -->
 
 <section class="section contact-section" id="contact">
   <div class="container">
@@ -945,22 +1013,28 @@ footer strong {
     <div class="section-heading">
       <span>GET IN TOUCH</span>
       <h2>Let's Get Started</h2>
-      <p>Have questions about lessons, training or aquatic services? Get in touch.</p>
+      <p>
+        Have questions about lessons, training or aquatic services?
+        Get in touch.
+      </p>
     </div>
 
     <div class="contact-grid">
 
       <div class="contact-info">
+
         <h3>Connect With <span class="gold">Coach Mike.</span></h3>
 
         <div class="contact-item">
-          <strong>PHONE / WHATSAPP</strong>
-          +254 116 088 816
+          <strong>PHONE / CALL</strong>
+          <a href="tel:+254116088816">0116088816</a>
         </div>
 
         <div class="contact-item">
-          <strong>EMAIL</strong>
-          michaelokoth@gmail.com
+          <strong>WHATSAPP</strong>
+          <a href="https://wa.me/254116088816" target="_blank" rel="noopener">
+            Chat with Coach Mike
+          </a>
         </div>
 
         <div class="contact-item">
@@ -972,23 +1046,35 @@ footer strong {
           <strong>TRAINING</strong>
           Swimming Coaching | Water Safety | Aquatic Services
         </div>
+
       </div>
 
       <div class="contact-panel">
+
         <h3>Ready to Make a Splash?</h3>
+
         <p>
           Whether you're a beginner, an experienced swimmer or looking
           for professional aquatic services, take the first step today.
         </p>
 
         <a class="btn" href="#booking">BOOK A SESSION</a>
+
         <br><br>
 
         <a class="btn btn-outline"
+           href="tel:+254116088816">
+          CALL COACH MIKE
+        </a>
+
+        <br><br>
+
+        <a class="btn"
            href="https://wa.me/254116088816"
            target="_blank" rel="noopener">
           CHAT ON WHATSAPP
         </a>
+
       </div>
 
     </div>
@@ -997,45 +1083,37 @@ footer strong {
 
 </main>
 
+<!-- FOOTER -->
+
 <footer>
   <div class="container">
+
     <div class="logo">COACH MIKE</div>
+
     <p>Professional Swimming Coach & Aquatic Services</p>
-    <p>© <span id="year"></span> <strong>Coach Mike.</strong> All Rights Reserved.</p>
+
+    <p>
+      © <span id="year"></span>
+      <strong>Coach Mike.</strong> All Rights Reserved.
+    </p>
+
   </div>
 </footer>
 
+<!-- FLOATING WHATSAPP -->
+
 <a class="whatsapp-float"
    href="https://wa.me/254116088816"
-   target="_blank" rel="noopener">
+   target="_blank"
+   rel="noopener">
    WhatsApp
 </a>
 
+<!-- JAVASCRIPT -->
+
 <script>
-// ====================================
-// EMAILJS CONFIGURATION
-// REPLACE THESE THREE VALUES
-// ====================================
 
-const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY";
-const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID";
-const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";
-
-// Check whether the credentials have been configured.
-const emailConfigured =
-  EMAILJS_PUBLIC_KEY !== "YOUR_PUBLIC_KEY" &&
-  EMAILJS_SERVICE_ID !== "YOUR_SERVICE_ID" &&
-  EMAILJS_TEMPLATE_ID !== "YOUR_TEMPLATE_ID";
-
-if (emailConfigured && window.emailjs) {
-  emailjs.init({
-    publicKey: EMAILJS_PUBLIC_KEY
-  });
-}
-
-// ====================================
 // MOBILE NAVIGATION
-// ====================================
 
 const menuBtn = document.getElementById("menuBtn");
 const navLinks = document.getElementById("navLinks");
@@ -1050,16 +1128,12 @@ document.querySelectorAll(".nav-links a").forEach(link => {
   });
 });
 
-// ====================================
-// YEAR
-// ====================================
+// AUTOMATIC COPYRIGHT YEAR
 
 document.getElementById("year").textContent =
   new Date().getFullYear();
 
-// ====================================
-// DATE VALIDATION
-// ====================================
+// PREVENT PAST BOOKING DATES
 
 const dateInput = document.getElementById("date");
 
@@ -1071,9 +1145,7 @@ const localToday = new Date(
 
 dateInput.min = localToday;
 
-// ====================================
 // GET BOOKING DETAILS
-// ====================================
 
 function getBookingDetails() {
 
@@ -1108,9 +1180,7 @@ function getBookingDetails() {
   };
 }
 
-// ====================================
 // WHATSAPP BOOKING
-// ====================================
 
 document.getElementById("whatsappBtn").addEventListener("click", () => {
 
@@ -1142,79 +1212,9 @@ Thank you.`;
     encodeURIComponent(message);
 
   window.open(whatsappURL, "_blank", "noopener");
-});
-
-// ====================================
-// DIRECT EMAIL THROUGH EMAILJS
-// ====================================
-
-const emailBtn = document.getElementById("emailBtn");
-const emailStatus = document.getElementById("emailStatus");
-
-emailBtn.addEventListener("click", async function () {
-
-  const data = getBookingDetails();
-
-  if (!data) return;
-
-  if (!emailConfigured || !window.emailjs) {
-
-    emailStatus.textContent =
-      "Email setup is incomplete. Please configure your EmailJS credentials.";
-
-    emailStatus.style.color = "#ff7777";
-
-    return;
-  }
-
-  emailBtn.disabled = true;
-  emailBtn.textContent = "SENDING...";
-
-  emailStatus.textContent =
-    "Sending your booking enquiry...";
-
-  emailStatus.style.color = "#ead7a7";
-
-  try {
-
-    await emailjs.send(
-      EMAILJS_SERVICE_ID,
-      EMAILJS_TEMPLATE_ID,
-      {
-        name: data.name,
-        phone: data.phone,
-        service: data.service,
-        learner: data.learner,
-        date: data.date,
-        location: data.location,
-        message: data.message
-      }
-    );
-
-    emailStatus.textContent =
-      "Success! Your booking enquiry has been sent to Coach Mike.";
-
-    emailStatus.style.color = "#70d69b";
-
-    document.getElementById("bookingForm").reset();
-
-  } catch (error) {
-
-    console.error("EmailJS error:", error);
-
-    emailStatus.textContent =
-      "Email could not be sent. Please check your EmailJS settings or use WhatsApp.";
-
-    emailStatus.style.color = "#ff7777";
-
-  } finally {
-
-    emailBtn.disabled = false;
-    emailBtn.textContent = "SEND VIA EMAIL";
-
-  }
 
 });
+
 </script>
 
 </body>
